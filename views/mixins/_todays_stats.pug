@@ -1,0 +1,31 @@
+mixin todaysStats(todaysStats)
+
+  .todaysStats
+    table
+        tr
+          th Date and time of entry: 
+          th Date of Headache:
+          th Time of Headache:
+          th Pain Level (0-10): 
+          th Type of Headache:
+          th Location of Headache:
+          th Additional Pain experienced in:
+          th During Menstruation Cycle?
+        each headache in headaches
+          tr
+            td= `${headache.date}`
+            td= `${headache.dateOf}`
+            if `${headache.timeOf}` === ""
+                td= `${headache.date}`
+            else
+                td= `${headache.timeOf}`
+            td= `${headache.intensity}`
+            td= `${headache.pain_type}`
+            td= `${headache.locations}`
+            td= `${headache.additional_pain}`
+            td= `${headache.menstruating}`
+
+
+
+
+  

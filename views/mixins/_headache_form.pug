@@ -1,0 +1,106 @@
+mixin headacheForm(headache={})
+
+  .headacheform
+    form(action="" method="POST" enctype="multipart/form-data")
+      h2 Headache Information
+
+      .date_wrapper
+        label(for="dateOf") What day did you experience the headache?
+        br
+        input(type="date" id="dateOf" name="dateOf")
+
+      .time_wrapper
+        p When did you first notice notice the headache?
+        .form_input
+          input(type="text" name="timeOf" list="timeOf")
+          datalist(id="timeOf")
+            option(value="1am - 6am")
+            option(value="6am - 12pm")
+            option(value="12pm - 6pm")
+            option(value="6pm - 12am")
+            option(value="Unsure")  
+      
+      .severity_wrapper
+        .form_input
+          label(for="intensity") What is the pain level? <br> 0 being pain-free, 10 being worst pain experienced
+          br
+          input(type="range" id="intensity" value="5" name="intensity" min="0" max="10" oninput="intensityOutputId.value = intensity.value")
+          output(name="intensityOutput" id="intensityOutputId") 5
+
+      .type_wrapper
+        p What type of headache is it? (You can select more than one)
+        .form_input
+          input(type="checkbox" id="dull" name="pain_type" value="dull")
+          label(for="dull") Dull
+        .form_input
+          input(type="checkbox" id="sharp" name="pain_type" value="sharp")
+          label(for="sharp") Sharp
+        .form_input
+          input(type="checkbox" id="throbbing" name="pain_type" value="throbbing")
+          label(for="throbbing") Throbbing
+        .form_input
+          input(type="checkbox" id="migraine" name="pain_type" value="migraine")
+          label(for="migraine") Migraine
+        .form_input
+          input(type="checkbox" id="squeezing" name="pain_type" value="squeezing")
+          label(for="squeezing") Squeezing
+        .form_input
+          input(type="checkbox" id="constant" name="pain_type" value="constant")
+          label(for="constant") Constant
+        .form_input
+          input(type="checkbox" id="intermittent" name="pain_type" value="intermittent")
+          label(for="intermittent") Intermittent
+        .form_input
+          input(type="checkbox" id="disorienting" name="pain_type" value="disorienting")
+          label(for="disorienting") Disorienting
+        .form_input
+          input(type="checkbox" id="none" name="pain_type" value="none")
+          label(for="none") No headache today!
+
+      .location_wrapper
+        p Where is the pain?
+        .form_input
+          input(type="text" name="locations" list="locations")
+          datalist(id="locations")
+            option(value="Top of head")
+            option(value="Rightside of the head")
+            option(value="Leftside of the head")
+            option(value="Both sides of the head")
+            option(value="Back of head at the top")
+            option(value="Back of head at the base")
+            option(value="All of the head")
+            option(value="In a ring around the head")
+            option(value="Either side of the forehead, in the temples")
+            option(value="Above the ears")
+            option(value="Above the right ear")
+            option(value="Above the left ear")
+            option(value="Front of forehead")
+            option(value="On the browline")
+
+      .additionalPain_wrapper
+        p Are you experiencing pain in any of the following areas?
+        .form_input
+          input(type="checkbox" id="jaw" name="additional_pain" value="jaw")
+          label(for="jaw") Jaw
+        .form_input
+          input(type="checkbox" id="sinuses" name="additional_pain" value="sinuses")
+          label(for="sinuses") Sinuses
+        .form_input
+          input(type="checkbox" id="ears" name="additional_pain" value="ears")
+          label(for="ears") Ears
+
+      h2 Menstrual Cycle Tracking
+      .menstruation_wrapper
+        p Are you currently menstruating?
+        .form_input
+          input(type="radio" id="menstruating" name="menstruating" value="true" checked)
+          label(for="menstruating") Yes
+        .form_input
+          input(type="radio" id="notMenstruating" name="menstruating" value="false")
+          label(for="notMenstruating") No
+
+      .form_input
+        button(type="submit" class="button_small") SUBMIT
+
+  
+  

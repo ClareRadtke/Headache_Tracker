@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header
+      nav
+        a(href="/")
+          img#logo(src='/images/logo.jpg')
+        ul
+          li
+            a(href="/")
+              button(type="button" class="button_small") Home
+          li
+            a(href="/todays-stats")
+              button(type="button" class="button_small") Today's Stats
+          li
+            a(href="/History")
+              button(type="buton" class="button_small") History
+        
+      
+
+    block content
+    
