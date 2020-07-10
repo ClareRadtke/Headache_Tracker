@@ -48,4 +48,7 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
+// moment connection to make moment available in pug
+app.locals.moment = require("moment");
+
 module.exports = app;

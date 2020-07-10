@@ -143,5 +143,24 @@ font-size: 1.2em;
 }
 
 /* Styling Today's Stats table */
+.todaysStats table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid rgb(149, 133, 170);
+}
+
+.todaysStats table th {
+  
+  border: 2px solid rgb(149, 133, 170);
+}
+
+.todaysStats table td {
+  text-align: center;
+  border: 2px solid rgb(149, 133, 170);
+}
+
 
 

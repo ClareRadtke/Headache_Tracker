@@ -13,16 +13,16 @@ mixin todaysStats(todaysStats)
           th During Menstruation Cycle?
         each headache in headaches
           tr
-            td= `${headache.date}`
-            td= `${headache.dateOf}`
+            td= `${moment(headache.date).format("ddd MMM Do YYYY, h:mm a")}`
+            td= `${moment(headache.dateOf).format("ddd MMM Do YYYY")}`
             if `${headache.timeOf}` === ""
                 td= `${headache.date}`
             else
                 td= `${headache.timeOf}`
             td= `${headache.intensity}`
-            td= `${headache.pain_type}`
+            td= `${headache.pain_type.join(", ")}`
             td= `${headache.locations}`
-            td= `${headache.additional_pain}`
+            td= `${headache.additional_pain.join(", ")}`
             td= `${headache.menstruating}`
 
 
